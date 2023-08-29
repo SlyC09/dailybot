@@ -1,0 +1,11 @@
+{
+  "name": "dailybot",
+  "version": "1.0.0",
+  "description": "Бот помогающий следить за прогрессом команды",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrey Komissarenko",
+  "license": "ISC"
+}
