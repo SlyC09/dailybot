@@ -45,7 +45,7 @@ def get_users():
 async def send_questions():
     while True:
         now = datetime.now()
-        if (now.hour == 12 and now.minute == 0 and not now.dst()) or (now.hour == 13 and now.minute == 0 and now.dst()):
+        if now.hour == 20 and now.minute == 0:
             users = get_users()
             for user_id in users:
                 await bot.send_message(user_id, questions[0])
