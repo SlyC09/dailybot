@@ -8,8 +8,8 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 
 logging.basicConfig(level=logging.INFO)
 
-API_TOKEN = '6535302137:AAF40uOCr-Ze8cUxZ17aMcFgwl9W08ooSQQ'
-GROUP_ID = -1001879804669
+API_TOKEN = 'Тут APIKey'
+GROUP_ID = -"Тут group_id"
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
