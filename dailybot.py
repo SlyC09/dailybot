@@ -23,24 +23,20 @@ questions = [
 ]
 
 responses = {}
-
-def connect():
-    return sqlite3.connect('users.db')
+connectDB = sqlite3.connect('users.db')
+cur = connectDB.cursor()
 
 def create_table():
-    with connect() as conn:
-        conn.execute('''CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY)''')
-        conn.commit()
+    cur.execute('''CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY)''')
+    cur.commit()
 
 def activate_user(user_id):
-    with connect() as conn:
-        conn.execute("INSERT OR IGNORE INTO users VALUES (?)", (user_id,))
-        conn.commit()
+    cur.execute("INSERT OR IGNORE INTO users VALUES (?)", (user_id,))
+    cur.commit()
 
 def get_users():
-    with connect() as conn:
-        cursor = conn.execute("SELECT user_id FROM users")
-        return [row[0] for row in cursor.fetchall()]
+    cursor = cur.execute("SELECT user_id FROM users")
+    return [row[0] for row in cursor.fetchall()]
 
 async def send_questions():
     while True:
